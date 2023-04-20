@@ -6,7 +6,6 @@ const Posts = (props) => {
       <h2>ID: {props.id}</h2>
       <h2>Title: {props.title}</h2>
       <h4>Author: {props.author}</h4>
-      <h4>Author: {props.gpa}</h4>
     </div>
   );
 };
