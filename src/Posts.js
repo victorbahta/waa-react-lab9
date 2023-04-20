@@ -1,14 +1,18 @@
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import Post from "./Post";
 import PostDetails from "./PostDetails";
 import AddPost from "./AddPost";
+import PostContext from "./PostContext";
+
 const Posts = (props) => {
   const [showDetails, setShowDetails] = useState(false);
   const [postInfo, setPostInfo] = useState(null);
+  const { postId, setPostId } = useContext(PostContext);
   const { posts } = props;
   const clickHandler = async (p) => {
     setPostInfo(p);
     setShowDetails(!showDetails);
+    setPostId(p.id);
   };
 
   return (
